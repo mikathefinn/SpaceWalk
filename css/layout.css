@@ -1,0 +1,55 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  background-image: url(../images/stars-bg.jpg);
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.headers {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.6rem;
+}
+
+h1 {
+  padding: 2rem 0 0 4rem;
+}
+h2 {
+  padding-right: 4rem;
+}
+.toggle-view {
+  opacity: 0;
+  display: block;
+  transition: opacity 5s;
+}
+
+.planets {
+  display: flex;
+  flex-direction: column; /* Display the content in a single column */
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  flex-basis: 100%;
+}
+
+.planets h2 {
+  font-size: 2.8rem;
+  padding: 2rem 0;
+  color: white;
+}
+
+.planets a img {
+  max-width: 50%; /* Make sure the links do not exceed their container's width */
+  text-align: center; /* Center the images within the links */
+}
+.planets :last-child {
+  margin-block-end: 3rem;
+}
