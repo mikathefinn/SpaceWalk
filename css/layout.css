@@ -19,10 +19,10 @@ body {
   font-size: 3.6rem;
 }
 
-h1 {
+.toggle-view h1 {
   padding: 2rem 0 0 4rem;
 }
-h2 {
+.toggle-view h2 {
   padding-right: 4rem;
 }
 .toggle-view {
@@ -52,4 +52,72 @@ h2 {
 }
 .planets :last-child {
   margin-block-end: 3rem;
+}
+
+/*********** NAV BURGER *********/
+#burger {
+  color: white;
+  padding-inline-end: 3rem;
+  font-size: 4rem;
+  cursor: pointer;
+  z-index: 1;
+}
+#quit {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 4rem;
+  padding: 3rem;
+  display: none;
+  cursor: pointer;
+}
+#links {
+  display: none;
+  position: fixed;
+  transition: 1s;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 60vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background */
+  justify-content: space-around;
+  z-index: 2;
+}
+#links a {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/********** MARS MAIN ************/
+.mars-main {
+  display: flex;
+  flex-direction: column;
+}
+.mars-main h1 {
+  font-size: 3.6rem;
+  text-align: center;
+  flex-basis: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mars-container {
+  flex-basis: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mars-map {
+  max-width: 100%;
 }

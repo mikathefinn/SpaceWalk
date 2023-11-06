@@ -13,7 +13,7 @@
 //     setTimeout(() => {
 //       sectionToDisplay.style.display = 'none';
 //       console.log('display:none');
-      
+
 //       console.log('planets display');
 //       planetsToDisplay.style.display = 'flex';
 //       // planetsToDisplay.style.flexDirection = 'column';
@@ -22,7 +22,24 @@
 //       setTimeout(() => {
 //         console.log('planets fade-in');
 //         planetsToDisplay.style.opacity = 1;
-//       }, 1000); //opacity 1s after 
+//       }, 1000); //opacity 1s after
 //     }, 5100); // set display none to avoid layout issues
 //   }, 5000);
 // });
+
+// Burger NAV
+
+function burger() {
+  const burger = document.getElementById('burger');
+  const links = document.getElementById('links');
+  const quit = document.getElementById('quit');
+  links.style.display = 'flex';
+  quit.style.display = 'inline';
+}
+function quit() {
+  const burger = document.getElementById('burger');
+  const links = document.getElementById('links');
+  const quit = document.getElementById('quit');
+  links.style.display = 'none';
+  quit.style.display = 'none';
+}
