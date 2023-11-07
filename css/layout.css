@@ -60,11 +60,11 @@ body {
   padding-inline-end: 3rem;
   font-size: 4rem;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
 }
 #quit {
   position: fixed;
-  z-index: 3;
+  z-index: 100;
   top: 0;
   left: 0;
   color: white;
@@ -84,7 +84,7 @@ body {
   height: 60vh;
   background-color: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background */
   justify-content: space-around;
-  z-index: 2;
+  z-index: 3;
 }
 #links a {
   text-align: center;
@@ -96,26 +96,74 @@ body {
 
 /********** MARS MAIN ************/
 .mars-main {
-  display: flex;
-  flex-direction: column;
-}
-.mars-main h1 {
+  z-index: 10;
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-content: space-between;
+  height: 100vh;
+  width: 100%;
   font-size: 3.6rem;
   text-align: center;
-  flex-basis: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
+
 header {
+  padding-top: 2rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  flex-basis: 100%;
+}
+.header-content {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.links {
+  grid-row: 2/10;
+  grid-column: 1/13;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.links h3 {
+  font-size: 1.6rem;
+  flex-basis: 50%;
+}
+.first-h3 {
+  padding-top: 3em;
+}
+.second-h3 {
+  padding-top: 9rem;
+}
+.third-h3 {
+  padding-bottom: 13rem;
+}
+.fourth-h3 {
+  padding-bottom: 10rem;
 }
 
 .mars-container {
-  flex-basis: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  max-width: 40rem;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #mars-map {
