@@ -13,6 +13,11 @@ body {
   align-items: center;
   color: white;
 }
+.mars-body {
+  background-image: url(../images/mars-bg.jpg);
+  background-size: cover;
+  display: block;
+}
 
 .headers {
   font-family: 'Montserrat', sans-serif;
@@ -171,25 +176,23 @@ header h1 {
 
 /********** ROVERs MAIN ***********/
 .flex-header {
+  background-color: rgba(50, 50, 50, 0.886);
   position: fixed;
   top: 0;
   left: 0;
+  padding-bottom: 2rem;
 }
-.rovers-main {
-  height: calc(100vh - 6rem);
+.rovers {
+  margin-top: 8rem;
+  height: calc(100vh - 8rem);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
-.intro {
-  line-height: 2rem;
-  /* letter-spacing: 0.1rem; */
-  padding: 0 3rem;
-}
-.box1 {
+
+/* .box1 {
   background-color: rgba(50, 50, 50, 0.485);
-  border: 1px solid rgba(32, 47, 126, 0.665);
   border-radius: 1rem;
   margin: 0 1rem;
   display: flex;
@@ -206,7 +209,6 @@ header h1 {
 }
 .box2 {
   background-color: rgba(50, 50, 50, 0.485);
-  border: 1px solid rgba(32, 47, 126, 0.665);
   border-radius: 1rem;
   margin: 0 1rem;
   display: flex;
@@ -217,9 +219,25 @@ header h1 {
 }
 .box2 img {
   max-width: 100%;
-}
+} */
 
 /********* CURIOSITY *********/
 
-.intro-rover {
+.intro {
+  padding: 2rem 3rem;
+  background-color: rgba(50, 50, 50, 0.485);
+  border-radius: 1rem;
+  margin: 0 1rem;
+  line-height: 2rem;
+}
+.intro p {
+  margin-bottom: 3rem;
+}
+.intro:first-of-type p {
+  margin-top: 2rem;
+}
+.intro-img {
+  width: 100%;
+  border-radius: 0.7rem;
+  margin-bottom: 2rem;
 }
