@@ -16,6 +16,7 @@ body {
 .mars-body {
   background-image: url(../images/mars-bg.jpg);
   background-size: cover;
+  background-attachment: fixed; /* Keeps the background image stationary */
   display: block;
 }
 
@@ -176,50 +177,20 @@ header h1 {
 
 /********** ROVERs MAIN ***********/
 .flex-header {
-  background-color: rgba(50, 50, 50, 0.886);
+  background-color: rgba(50, 50, 50, 0.97);
   position: fixed;
   top: 0;
   left: 0;
   padding-bottom: 2rem;
 }
 .rovers {
-  margin-top: 8rem;
-  height: calc(100vh - 8rem);
+  margin-top: 10rem;
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
-
-/* .box1 {
-  background-color: rgba(50, 50, 50, 0.485);
-  border-radius: 1rem;
-  margin: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
-}
-.box1 img {
-  max-width: 100%;
-}
-.boxtext {
-  font-size: 2rem;
-}
-.box2 {
-  background-color: rgba(50, 50, 50, 0.485);
-  border-radius: 1rem;
-  margin: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
-}
-.box2 img {
-  max-width: 100%;
-} */
 
 /********* CURIOSITY *********/
 
