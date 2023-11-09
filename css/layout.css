@@ -192,6 +192,22 @@ header h1 {
   justify-content: space-evenly;
   align-items: center;
 }
+#rovers-p{
+  margin-bottom: 5rem;
+}
+
+.intro h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 3rem;
+}
+.box1 {
+  margin-bottom: 4rem;
+}
+.box2 {
+  margin-bottom: 1rem;
+}
 
 /********* CURIOSITY *********/
 

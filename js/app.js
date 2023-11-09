@@ -1,17 +1,16 @@
 // GLOBAL SCOPE VARIABLES
 
 const planetsToDisplay = document.querySelector('.planets');
+const planetLinks = document.querySelectorAll('.planet-link');
 const curiosityBtn = document.getElementById('slideshow-btn');
 let isSlideShowRuning = false; //state of the slideshow in the beginning
 let intervalId; //declare it in the global scope so it can be accessed by both start and stop slideshow
 
+/************* FUNCTIONS ************/
 
-/************* FUNCTIONS ************/ 
-
-
-function fadeInAndOut () {
+function fadeInAndOut() {
+  
   const sectionToDisplay = document.querySelector('.toggle-view');
-
   sectionToDisplay.style.opacity = 1;
   console.log('section fade in');
   // section has opacity set to 0 in css witha transition of 5s
@@ -30,15 +29,29 @@ function fadeInAndOut () {
       planetsToDisplay.style.flexDirection = 'column';
       planetsToDisplay.style.justifyContent = 'center';
       planetsToDisplay.style.alignItems = 'center';
-      
+
       setTimeout(() => {
         console.log('planets fade-in');
-        
+
         planetsToDisplay.style.opacity = 1;
       }, 1000); //opacity 1s after
     }, 5100); // set display none to avoid layout issues
   }, 5000);
-};
+}
+
+planetLinks.forEach((link) => {
+  link.addEventListener('click', function (event) {
+    console.log('link clicked');
+    //prevent clicking the link so the fadeout has time to play out
+    event.preventDefault();
+    planetsToDisplay.style.transition = 'opacity 3s';
+    planetsToDisplay.style.opacity = 0;
+    setTimeout(() => {
+    
+      window.location.href = link.getAttribute('href');
+    }, 3000);
+  });
+});
 
 // Burger NAV
 
@@ -58,7 +71,6 @@ function quit() {
 }
 
 // SLIDESHOW
-
 
 function buttonClicked() {
   console.log('slideshow button clicked');
@@ -156,6 +168,7 @@ function fetchAndDisplayImage() {
   });
 }
 
-// EVENT LISTENERS
+/****************** EVENT LISTENERS ***************/
+
 window.addEventListener('load', fadeInAndOut);
 curiosityBtn.addEventListener('click', buttonClicked);
