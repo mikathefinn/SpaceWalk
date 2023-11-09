@@ -38,6 +38,8 @@ body {
 }
 
 .planets {
+  opacity: 0;
+  transition: opacity 5s;
   display: none;
   flex-direction: column; /* Display the content in a single column */
   align-items: center;

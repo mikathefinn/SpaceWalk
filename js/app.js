@@ -1,6 +1,16 @@
-window.addEventListener('load', function () {
+// GLOBAL SCOPE VARIABLES
+
+const planetsToDisplay = document.querySelector('.planets');
+const curiosityBtn = document.getElementById('slideshow-btn');
+let isSlideShowRuning = false; //state of the slideshow in the beginning
+let intervalId; //declare it in the global scope so it can be accessed by both start and stop slideshow
+
+
+/************* FUNCTIONS ************/ 
+
+
+function fadeInAndOut () {
   const sectionToDisplay = document.querySelector('.toggle-view');
-  const planetsToDisplay = document.querySelector('.planets');
 
   sectionToDisplay.style.opacity = 1;
   console.log('section fade in');
@@ -15,18 +25,20 @@ window.addEventListener('load', function () {
       console.log('display:none');
 
       console.log('planets display');
+      // planetsToDisplay.style.opacity = 0;
       planetsToDisplay.style.display = 'flex';
       planetsToDisplay.style.flexDirection = 'column';
       planetsToDisplay.style.justifyContent = 'center';
       planetsToDisplay.style.alignItems = 'center';
+      
       setTimeout(() => {
         console.log('planets fade-in');
-        //NEED TO FIX FADE IN!!!
+        
         planetsToDisplay.style.opacity = 1;
       }, 1000); //opacity 1s after
     }, 5100); // set display none to avoid layout issues
   }, 5000);
-});
+};
 
 // Burger NAV
 
@@ -46,10 +58,16 @@ function quit() {
 }
 
 // SLIDESHOW
-const curiosityBtn = document.getElementById('slideshow-btn');
-//setInterval to display a new image every 5s
-let isSlideShowRuning = false; //state of the slideshow in the beginning
-let intervalId; //declare it outside of the functions so it can be accessed by both start and stop slideshow
+
+
+function buttonClicked() {
+  console.log('slideshow button clicked');
+  if (isSlideShowRuning) {
+    stopSlideShow();
+  } else {
+    startSlidesShow();
+  }
+}
 
 function startSlidesShow() {
   if (!isSlideShowRuning) {
@@ -71,7 +89,6 @@ function stopSlideShow() {
 }
 
 // API GET + create a random sol to get an image from a random sol
-
 // first, get the latest sol from mission manifest api endpoint
 
 function fetchLatestSol() {
@@ -140,11 +157,5 @@ function fetchAndDisplayImage() {
 }
 
 // EVENT LISTENERS
-curiosityBtn.addEventListener('click', () => {
-  console.log('slideshow button clicked');
-  if (isSlideShowRuning) {
-    stopSlideShow();
-  } else {
-    startSlidesShow();
-  }
-});
+window.addEventListener('load', fadeInAndOut);
+curiosityBtn.addEventListener('click', buttonClicked);
