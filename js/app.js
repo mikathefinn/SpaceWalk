@@ -9,7 +9,6 @@ let intervalId; //declare it in the global scope so it can be accessed by both s
 /************* FUNCTIONS ************/
 
 function fadeInAndOut() {
-  
   const sectionToDisplay = document.querySelector('.toggle-view');
   sectionToDisplay.style.opacity = 1;
   console.log('section fade in');
@@ -47,7 +46,6 @@ planetLinks.forEach((link) => {
     planetsToDisplay.style.transition = 'opacity 3s';
     planetsToDisplay.style.opacity = 0;
     setTimeout(() => {
-    
       window.location.href = link.getAttribute('href');
     }, 3000);
   });
@@ -69,6 +67,32 @@ function quit() {
   links.style.display = 'none';
   quit.style.display = 'none';
 }
+
+document.addEventListener('mousemove', function (event) {
+  const x = event.clientX;
+  const y = event.clientY;
+  console.log('X:', x, 'Y:', y);
+});
+
+// CANVAS
+// document.addEventListener('DOMContentLoaded', function () {
+//   console.log('draw should start');
+//   const marsCanvas = document.getElementById('mars-canvas')
+//   const ctx = marsCanvas.getContext('2d');
+
+//   ctx.strokeStyle = 'white';
+//   ctx.lineWidth = 5;
+
+//   ctx.beginPath();
+
+//   ctx.moveTo(78, 208);
+//   ctx.lineTo(330, 400);
+//   ctx.lineTo(247, 489);
+
+//   ctx.stroke();
+//   ctx.closePath();
+// });
+
 
 // SLIDESHOW
 
